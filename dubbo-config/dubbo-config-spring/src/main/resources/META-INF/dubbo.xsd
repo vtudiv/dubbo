@@ -6,8 +6,8 @@
 	targetNamespace="http://code.alibabatech.com/schema/dubbo">
 	
 	<xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
-	<xsd:import namespace="http://www.springframework.org/schema/beans"/>
-	<xsd:import namespace="http://www.springframework.org/schema/tool"/>
+	<xsd:import namespace="http://www.springframework.org/schema/beans" schemaLocation="http://www.springframework.org/schema/beans/spring-beans-3.2.xsd"/>
+	<xsd:import namespace="http://www.springframework.org/schema/tool" schemaLocation="http://www.springframework.org/schema/tool/spring-tool-3.2.xsd"/>
 
 	<xsd:annotation>
 		<xsd:documentation><![CDATA[ Namespace support for the dubbo services provided by dubbo framework. ]]></xsd:documentation>
@@ -1075,6 +1075,11 @@
 		<xsd:attribute name="package" type="xsd:string" use="optional">
 			<xsd:annotation>
 				<xsd:documentation><![CDATA[ The scan package. ]]></xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="version" type="xsd:string" use="optional">
+			<xsd:annotation>
+				<xsd:documentation><![CDATA[ The version. ]]></xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>

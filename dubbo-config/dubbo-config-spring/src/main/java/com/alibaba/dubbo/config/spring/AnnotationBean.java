@@ -66,6 +66,8 @@ public class AnnotationBean extends AbstractConfig implements DisposableBean, Be
     private String annotationPackage;
 
     private String[] annotationPackages;
+    
+    private String version = null;
 
     private final Set<ServiceConfig<?>> serviceConfigs = new ConcurrentHashSet<ServiceConfig<?>>();
 
@@ -80,8 +82,18 @@ public class AnnotationBean extends AbstractConfig implements DisposableBean, Be
         this.annotationPackages = (annotationPackage == null || annotationPackage.length() == 0) ? null
                 : Constants.COMMA_SPLIT_PATTERN.split(annotationPackage);
     }
+    
+    public String getVersion() {
+		return version;
+	}
 
-    private ApplicationContext applicationContext;
+	public void setVersion(String version) {
+		this.version = version;
+	}
+
+
+
+	private ApplicationContext applicationContext;
 
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
